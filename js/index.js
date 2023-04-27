@@ -16,23 +16,24 @@
     var currentScrollPos = window.pageYOffset;
 
     //color transition
-    var color = "transparent"
+    var color = "transparent";
     if (currentScrollPos > Math.max(viewportHeight, minHeightOfWelcome)) {
-      color = "#0a0a0a"
+      color = "#0a0a0a";
     } else {
-      color = "transparent"
+      color = "transparent";
     }
 
-    if (prevScrollpos > currentScrollPos) { //scrolling up
+    if (prevScrollpos > currentScrollPos) {
+      //scrolling up
       document.getElementById("bannerScroll").style.top = "0";
       document.getElementById("bannerScroll").style.backgroundColor = color;
-    } else { //scrolling down
+    } else {
+      //scrolling down
       document.getElementById("bannerScroll").style.top = "-60px";
       document.getElementById("bannerScroll").style.backgroundColor = color;
     }
     prevScrollpos = currentScrollPos;
-  }
-
+  };
 
   // Handle resizing window
   // ------------------------------------------------------------
@@ -44,7 +45,8 @@
     if (viewportWidth < minWidthOfAbout) {
       document.getElementById("profile_pic1").style.display = "none";
       document.getElementById("profile_pic2").style.display = "block";
-      document.getElementById("aboutMe_content_text").style.textAlign = "center";
+      document.getElementById("aboutMe_content_text").style.textAlign =
+        "center";
     } else {
       document.getElementById("profile_pic1").style.display = "block";
       document.getElementById("profile_pic2").style.display = "none";
@@ -53,7 +55,6 @@
   }
   window.addEventListener("resize", updateViewport);
 
-
   // Handle go to the top of the page button
   // ------------------------------------------------------------
   function showUpButton() {
@@ -61,11 +62,11 @@
 
     // Show/hide the button
     if (window.scrollY >= upButtonPx) {
-      if (!goTopButton.classList.contains('button-is-visible')) goTopButton.classList.add("button-is-visible")
+      if (!goTopButton.classList.contains("button-is-visible"))
+        goTopButton.classList.add("button-is-visible");
     } else {
-      goTopButton.classList.remove("button-is-visible")
+      goTopButton.classList.remove("button-is-visible");
     }
   }
-  window.addEventListener('scroll', showUpButton);
-
+  window.addEventListener("scroll", showUpButton);
 })();
