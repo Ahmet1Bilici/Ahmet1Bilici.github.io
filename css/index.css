@@ -709,6 +709,10 @@ hr {
   background-image: url(../data/utsa.jpg);
 }
 
+#item6:after {
+  background-image: url(../data/usaaLogo.jpg);
+}
+
 .timeline ul li:after {
   background-size: cover;
   background-repeat: no-repeat;
